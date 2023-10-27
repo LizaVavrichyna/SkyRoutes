@@ -6,6 +6,7 @@ import Orders from "./order/Orders";
 import Drones from "./drone/Drones";
 import Tickets from "./ticket/Tickets";
 import RouteList from "./route/RouteList";
+import LandingPage from "./LandingPage";
 
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
@@ -16,7 +17,7 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           index
           element={
             <AuthorizedRoute loggedInUser={loggedInUser}>
-              <p>Welcome to SkyRoutes!</p>
+              <LandingPage loggedInUser={loggedInUser}/>
             </AuthorizedRoute>
           }
         />
