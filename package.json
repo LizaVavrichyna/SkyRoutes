@@ -2,6 +2,7 @@
   "dependencies": {
     "@google-maps-react/api": "github:JustFly1984/react-google-maps-api",
     "google-map-react": "^2.2.1",
+    "google-maps-react": "^2.0.6",
     "react": "^16.0.0",
     "react-bootstrap": "^2.9.1",
     "react-google-maps": "^9.4.5"
