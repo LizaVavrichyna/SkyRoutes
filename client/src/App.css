@@ -38,3 +38,18 @@ p.routing-in-progress {
     transform: rotate(360deg);
   }
 }
+/* Change the size of the marker icon. */
+.marker-icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* Change the color of the marker icon. */
+.marker-icon {
+  fill: rgb(0, 255, 213);
+}
+
+/* Add a border to the marker icon. */
+.marker-icon {
+  border: 1px solid rgb(8, 8, 8);
+}

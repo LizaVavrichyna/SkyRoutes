@@ -92,7 +92,7 @@ export default function OrderList({  setDetailsOrders }) {
           />
           </FormGroup>
           <FormGroup>
-          <Button color="primary" onClick={handleSubmitOrder}>Submit</Button>
+          <Button outline color="primary" onClick={handleSubmitOrder}>Submit</Button>
           </FormGroup>
           </>
       )}
@@ -117,14 +117,14 @@ export default function OrderList({  setDetailsOrders }) {
                         
                 <td>
                     {!order?.delivered
-                      ?<Button onClick={(e) => onSelectOrder(e, order) }>Deliver</Button>
+                      ?<Button outline onClick={(e) => onSelectOrder(e, order) }>Deliver</Button>
                   : <></>}
                 </td>
 
                 <td>
                     
                     {!order?.delivered
-                      ?<Button color="danger" onClick={(e) => deleteClick(e, order)}>Delete</Button>
+                      ?<Button outline color="danger" onClick={(e) => deleteClick(e, order)}>Delete</Button>
                   : <></>}
                 </td>
                 

@@ -30,7 +30,13 @@ public class OrderController : ControllerBase
         //HTTP response with a status of 200, as well as the data that's passed in
         return Ok(_dbContext.Orders.OrderBy(o => o.DeliveryDate).Where(o => o.Delivered == false).ToList());
     }
-    
+    [HttpGet("today")]
+    [Authorize]
+    public IActionResult GetToday()
+    {
+        //HTTP response with a status of 200, as well as the data that's passed in
+        return Ok(_dbContext.Orders.Where(o => o.Delivered == false).ToList());
+    }
     //get order by id
     [HttpGet("{id}")]
     [Authorize]
