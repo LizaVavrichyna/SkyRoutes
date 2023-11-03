@@ -1,61 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../managers/authManager";
-import { Button, FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { Button, FormFeedback, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+import LoginModal from "./LoginModal";
+import { getHubAddress, getOrders } from "../../managers/orderManager";
+import MapContainer from "../route/MapContainer";
 
 export default function Login({ setLoggedInUser }) {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [failedLogin, setFailedLogin] = useState(false);
+  const [hub, setHub] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    login(email, password).then((user) => {
-      if (!user) {
-        setFailedLogin(true);
-      } else {
-        setLoggedInUser(user);
-        navigate("/");
-      }
-    });
+  const getHub = () => {
+    getHubAddress().then(data => setHub(data))
   };
+  useEffect(() => {
+      getHub();
+     
+  },[]);
+
+  const containerStyle = {
+        width: '100%',
+        height: '1000px',
+      };
+  const zoom = 17;
+
 
   return (
-    <div className="container" style={{ maxWidth: "500px" }}>
-      <h3>Login</h3>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
-          invalid={failedLogin}
-          type="text"
-          value={email}
-          onChange={(e) => {
-            setFailedLogin(false);
-            setEmail(e.target.value);
-          }}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Password</Label>
-        <Input
-          invalid={failedLogin}
-          type="password"
-          value={password}
-          onChange={(e) => {
-            setFailedLogin(false);
-            setPassword(e.target.value);
-          }}
-        />
-        <FormFeedback>Login failed.</FormFeedback>
-      </FormGroup>
-
-      <Button color="primary" onClick={handleSubmit}>
-        Login
-      </Button>
-      <p>
-        Not signed up? Register <Link to="/register">here</Link>
-      </p>
-    </div>
+    <div  style={{ maxWidth: "100%" }}>
+      {hub?.length > 0
+        ? <MapContainer addresses={hub} containerStyle={containerStyle} zoom={zoom}/>
+        : <div>Loading map...</div>
+      }
+        </div>
   );
 }

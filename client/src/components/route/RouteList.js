@@ -51,8 +51,8 @@ export default function RouteList({ loggedInUser }) {
       };
 
     return (
-        <><h2>Hub: 50 Airways Blvd, Nashville, TN</h2>
-        <h5>All routes start at the hub</h5>
+        <><br></br><h2>Hub: 50 Airways Blvd, Nashville, TN</h2>
+       
         <Row>
         {routes.map((route) => (
             <Col key={route.id}>
@@ -63,7 +63,7 @@ export default function RouteList({ loggedInUser }) {
           
 
           }}>
-            <CardBody style={{ backgroundColor: "yellow" }} >
+            <CardBody  >
                 <CardTitle tag="h5" >
                 Route: {route?.id}
                 </CardTitle>

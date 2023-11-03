@@ -45,7 +45,7 @@ export default function DroneList({ setDetailsDroneId }) {
     return (
       <>
         <h2>Drones</h2>
-        <Button onClick={handleToggleForm}>
+        <Button onClick={handleToggleForm}  style={{marginBottom: "1rem"}}>
         {showForm ? 'Done' : 'Add Drone'}
         </Button>
         {showForm && (

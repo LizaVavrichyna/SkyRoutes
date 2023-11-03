@@ -58,6 +58,12 @@ public class OrderController : ControllerBase
         return Ok(order);
     }
 
+    //get hub
+    [HttpGet("hub")]
+    public IActionResult GetHub()
+    {
+        return Ok(_dbContext.Orders.Where(o => o.IsHub == true).ToList());
+    }
 
     [HttpPost("")]
     [Authorize]

@@ -10,6 +10,10 @@ export const getOrderById = (id) => {
     return fetch(`${apiUrl}/${id}`).then((res) => res.json());
 };
 
+export const getHubAddress = () => {
+  return fetch(`${apiUrl}/hub`).then((res) => res.json());
+};
+
 export const deleteOrder = (orderId) => {
     return fetch(`${apiUrl}/${orderId}`, {
         method: "DELETE",

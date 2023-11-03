@@ -9,10 +9,10 @@ export default function Orders({loggedInUser}) {
     return (
       <div className="container" >
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-sm-6" style={{paddingTop: "2rem"}}>
             <OrderList setDetailsOrders={setDetailsOrders} />
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-6" style={{paddingTop: "2rem"}}>
             <OrderBuilder loggedInUser={loggedInUser} detailsOrders={detailsOrders} setDetailsOrders={setDetailsOrders}/>
           </div>
         </div>

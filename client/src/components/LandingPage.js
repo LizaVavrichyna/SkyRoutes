@@ -1,10 +1,9 @@
 
-import { Wrapper } from "@googlemaps/react-wrapper";
-import React, { useState, useEffect, useCallback } from 'react';
-import { getOrders, getTodayOrders } from "../managers/orderManager";
-
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import React, { useState, useEffect } from 'react';
+import { getOrders } from "../managers/orderManager";
 import MapContainer from "./route/MapContainer";
+
+
 export default function LandingPage({ loggedInUser }) {
     const [addresses, setAddresses] = useState([]);
 
