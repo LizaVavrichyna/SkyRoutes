@@ -65,6 +65,9 @@ export default function DroneDetails({ detailsDroneId, loggedInUser }) {
             drone.isActive && loggedInUser.roles.includes("Admin")
             ?<Button
             color="danger"
+            style={{marginBottom: "1rem",
+        width: 150
+      }}
             onClick={(e) => {
               deleteClick(e, drone);
               
@@ -80,7 +83,9 @@ export default function DroneDetails({ detailsDroneId, loggedInUser }) {
             <p>Distance(km): {drone?.distanceCap}</p>
 
 
-        <Button color="danger" onClick={handleToggleForm}>
+        <Button color="dark" style={{marginBottom: "1rem",
+        width: 150
+      }} onClick={handleToggleForm}>
         {showTicketForm ? 'Done' : 'Repair Request'}
         </Button>
         {showTicketForm && (

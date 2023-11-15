@@ -77,11 +77,16 @@ export default function RouteList({ loggedInUser }) {
                 </CardText>
                 <MapContainer addresses={route?.orders} containerStyle={containerStyle} zoom={zoom}/>
                 {loggedInUser.roles.includes("Admin")
-                    ?<Button outline color="danger" onClick={(e) => deleteClick(e, route)}>Delete</Button>
+                    ?<Button style={{
+                      
+                      marginTop: '1rem'
+                    
+          
+                    }} outline color="danger" onClick={(e) => deleteClick(e, route)}>Delete</Button>
                     : <></>}
             </CardBody>
 <Button
-                color="primary"
+                color="dark"
                 outline
                 onClick={() => toggle(route.id)} // Pass the route ID to the toggle function
                 style={{ marginBottom: '1rem' }}

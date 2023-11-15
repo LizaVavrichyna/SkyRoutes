@@ -36,7 +36,16 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
           height: 100,
           width: 100
         }}
-      />SkyRoutes
+      />
+      <img
+        alt="logo"
+        src="https://see.fontimg.com/api/renderfont4/Br0w/eyJyIjoiZnMiLCJoIjoxNDgsInciOjIwMDAsImZzIjo3NCwiZmdjIjoiIzA2MDYwNiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/U2t5Um91dGVz/painter-personal-use-only.png"
+        style={{
+          height: 80,
+          width: 300,
+          marginTop: 30
+        }}
+        />
         </NavbarBrand>
         {loggedInUser ? (
           <>
@@ -145,8 +154,12 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
                 )}
               </Nav>
             </Collapse>
-            <Button
-              color="dark"
+            <Button 
+              style={{marginBottom: "1rem",
+              width: 150
+            }}
+            
+              className="btn btn-dark"
               onClick={(e) => {
                 e.preventDefault();
                 setOpen(false);

@@ -22,7 +22,11 @@ import {
           </CardSubtitle>
           
           <Button
+             outline
             color="dark"
+            style={{marginBottom: "1rem",
+        width: 150
+      }}
             onClick={() => {
               setDetailsDroneId(drone.id);
               window.scrollTo({

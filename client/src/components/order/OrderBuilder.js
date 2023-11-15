@@ -71,7 +71,7 @@ export default function OrderBuilder({ loggedInUser, detailsOrders , setDetailsO
                 <td>{order?.address}</td>
                 <td>{order?.deliveryDate.split("T")[0]}</td>
                 <td>
-                    <Button color="danger" onClick={(e) => deleteClick(e, order)}>Delete</Button>
+                    <Button outline color="danger" onClick={(e) => deleteClick(e, order)}>Delete</Button>
                 </td>
                 </tr>
 
@@ -94,7 +94,11 @@ export default function OrderBuilder({ loggedInUser, detailsOrders , setDetailsO
             ))}
           </Input>
         </FormGroup>
-        <Button onClick={e => handleSubmit(e)} color="primary">
+        <Button 
+        style={{marginBottom: "1rem",
+        width: 150
+      }}
+        onClick={e => handleSubmit(e)} color="dark">
           Submit
         </Button>
 

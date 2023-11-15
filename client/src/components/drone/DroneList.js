@@ -45,7 +45,9 @@ export default function DroneList({ setDetailsDroneId }) {
     return (
       <>
         <h2>Drones</h2>
-        <Button onClick={handleToggleForm}  style={{marginBottom: "1rem"}}>
+        <Button onClick={handleToggleForm} color="dark" style={{marginBottom: "1rem",
+        width: 150
+      }}>
         {showForm ? 'Done' : 'Add Drone'}
         </Button>
         {showForm && (
@@ -95,7 +97,9 @@ export default function DroneList({ setDetailsDroneId }) {
           </FormGroup>
 
           <FormGroup>
-          <Button color="primary" onClick={handleSubmit}>Submit</Button>
+          <Button color="dark" style={{marginBottom: "1rem",
+        width: 150
+      }} onClick={handleSubmit}>Submit</Button>
           </FormGroup>
           </>
       )}

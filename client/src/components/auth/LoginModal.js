@@ -27,14 +27,15 @@ export default function LoginModal({ setLoggedInUser }) {
     };
     return (
         <div>
-        <Button color="danger" onClick={toggle}>
+        <Button color="dark" onClick={toggle}>
         Login
       </Button>
-         <Modal isOpen={modal} toggle={toggle} >
-        <ModalHeader toggle={toggle}>Welcome to SkyRoutes</ModalHeader>
+         <Modal  
+         isOpen={modal} toggle={toggle} >
+        <ModalHeader className="bg-warning" toggle={toggle}>Welcome to SkyRoutes</ModalHeader>
         <ModalBody>
         <h3>Login</h3>
-      <FormGroup>
+      <FormGroup >
         <Label>Email</Label>
         <Input
           invalid={failedLogin}
@@ -59,7 +60,7 @@ export default function LoginModal({ setLoggedInUser }) {
         />
         <FormFeedback>Login failed.</FormFeedback>
       </FormGroup>
-      <Button color="primary" onClick={handleSubmit}>
+      <Button color="dark" onClick={handleSubmit}>
         Login
       </Button>
 

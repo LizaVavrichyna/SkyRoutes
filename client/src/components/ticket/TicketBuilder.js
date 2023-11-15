@@ -49,7 +49,9 @@ export default function TicketBuilder({ onTicketUpdate, drone , loggedInUser, se
           </Input>
         </FormGroup>
 
-          <Button onClick={e => handleSubmitTicket(e)}>Submit Ticket</Button>
+          <Button 
+          style={{marginBottom: "1rem", width: 150}} 
+          color="dark" onClick={e => handleSubmitTicket(e)}>Submit Ticket</Button>
         </div>
     );
 }

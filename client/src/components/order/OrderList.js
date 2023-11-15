@@ -68,7 +68,12 @@ export default function OrderList({  setDetailsOrders }) {
     return (
       <>
         <h2>Orders</h2>
-        <Button onClick={handleToggleForm}>
+        <Button 
+        style={{marginBottom: "1rem",
+        width: 150
+      }}
+        color="dark" 
+        onClick={handleToggleForm}>
         {showOrderForm ? 'Done' : 'Create Order'}
       </Button>
       {showOrderForm && (
@@ -92,7 +97,12 @@ export default function OrderList({  setDetailsOrders }) {
           />
           </FormGroup>
           <FormGroup>
-          <Button outline color="primary" onClick={handleSubmitOrder}>Submit</Button>
+          <Button 
+          style={{marginBottom: "1rem",
+          width: 150
+        }}
+          color="dark" 
+          onClick={handleSubmitOrder}>Submit</Button>
           </FormGroup>
           </>
       )}
